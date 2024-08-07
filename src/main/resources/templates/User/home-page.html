@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.png" type="">
+
+    <title>NHÀ HÀNG PIZZA</title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" th:href="@{/User/css/bootstrap.css}" />
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css}" />
+    <!-- nice select  -->
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css}" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+    <!-- font awesome style -->
+    <link th:href="@{User/css/font-awesome.min.css}" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link th:href="@{/User/css/style.css}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link th:href="@{/User/css/responsive.css}" rel="stylesheet" />
+</head>
+<body>
+<!--Header-->
+<div class="hero_area">
+    <div class="bg-box">
+        <img src="/User/images/background.png" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section ">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <!-- logo cửa hàng -->
+                <span>
+              <img class="logo" src="/User/images/logo.png" >
+            </span>
+                <!-- logo cửa hàng -->
+                <!--Các lựa chọn trên thanh navbar-->
+                <div class="collapse navbar-collapse" >
+                    <ul class="navbar-nav  mx-auto ">
+                        <li class="nav-item active">
+                            <a class="nav-link" th:href="@{/page/home}">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link load" th:href="@{/page/menu}">Thực đơn</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/page/about}"><i class="bi bi-people-fill"></i> Giới thiệu </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/booking/table}"><i class="bi bi-telephone-forward"></i> Đặt bàn</a>
+                        </li>
+
+                    </ul>
+                    <div class="user_option">
+                        <a href="" class="order_online">
+                           <i class="bi bi-person-circle"></i> Đặng nhập
+                        </a>
+                    </div>
+                    <div class="shopping-cart-symbol">
+                        <a class="nav-link" th:href="@{/shopping-cart/cart}"><i class="bi bi-cart-check-fill" id="symbol-cart"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section">
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-7 col-lg-6 ">
+                                <div class="detail-box">
+                                    <h1>
+                                        Pizza Hoàng Gia
+                                    </h1>
+                                    <p>
+                                        Chào mừng các bạn đến với "Pizza Hoàng Gia".
+                                        Thiên đường ẩm thực dành cho những tâm hồn yêu thích pizza!
+                                        Tọa lạc tại trung tâm thành phố, nhà hàng chúng tôi tự hào mang đến những chiếc pizza với vỏ
+                                        bánh thơm ngon, xốp tan, cùng với những nguyên liệu tươi ngon, được chọn lọc kỹ lưỡng.
+                                    </p>
+                                    <div class="btn-box">
+                                        <a th:href="@{/page/menu}" class="btn1">
+                                            Đặt hàng ngay
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-7 col-lg-6 ">
+                                <div class="detail-box">
+                                    <h1>
+                                        Pizza Hoàng Gia
+                                    </h1>
+                                    <p>
+                                        Nhà hàng được thiết kế theo phong cách ấm cúng, hiện đại, tạo không gian lý tưởng để gia đình và bạn bè sum vầy,
+                                        thưởng thức những món pizza thơm ngon. Chúng tôi luôn cập nhật những xu hướng pizza mới lạ,
+                                        đồng thời giữ gìn và phát triển những công thức truyền thống đã được yêu thích suốt nhiều năm qua.
+                                    </p>
+                                    <div class="btn-box">
+                                        <a href="" class="btn1">
+                                            Đặt hàng ngay
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-7 col-lg-6 ">
+                                <div class="detail-box">
+                                    <h1>
+                                        Pizza Hoàng Gia
+                                    </h1>
+                                    <p>
+                                        Bên cạnh các loại pizza kinh điển, nhà hàng còn mang đến nhiều lựa chọn đa dạng về hương vị như:
+                                        pizza hải sản, pizza rau củ, pizza thịt hun khói... Mỗi chiếc pizza đều được chế biến tỉ mỉ,
+                                        từ khâu làm vỏ đến phối hợp các nguyên liệu, nhằm mang đến cho thực khách trải nghiệm ẩm thực tuyệt vời.
+                                    </p>
+                                    <div class="btn-box">
+                                        <a th:href="@{/page/menu}" class="btn1">
+                                            Đặt hàng ngay
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <ol class="carousel-indicators">
+                    <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+                    <li data-target="#customCarousel1" data-slide-to="1"></li>
+                    <li data-target="#customCarousel1" data-slide-to="2"></li>
+                </ol>
+            </div>
+        </div>
+
+    </section>
+    <!-- end slider section -->
+</div>
+<!--end header-->
+
+<!-- offer section -->
+<section class="offer_section layout_padding-bottom">
+    <div class="offer_container">
+        <div class="container ">
+            <div class="heading_container heading_center">
+                <h2>
+                    Tin tức mới nhất
+                </h2>
+                <p>Các tin tức, thông tin khuyến mãi mới nhất sẽ được cập nhật liên tục đến với quý khách</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6  ">
+                    <div class="box ">
+                        <div class="img-box">
+                            <img src="/User/images/Pizza discount.png" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                Khuyến mãi thứ 5 hàng tuần
+                            </h5>
+                            <h1>
+                                50%
+                            </h1>
+                            <a th:href="@{/page/menu}">
+                                Đặt hàng ngay <i class="bi bi-cart4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box ">
+                        <div class="img-box">
+                            <img src="/User/images/o2.jpg" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                Mua 5 giảm giá
+                            </h5>
+                            <h1>
+                                15%
+                            </h1>
+                            <a th:href="@{/page/menu}">
+                                Đặt hàng ngay <i class="bi bi-cart4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end offer section -->
+
+<!-- food section -->
+<section class="food_section layout_padding-bottom">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                Thực Đơn
+            </h2>
+        </div>
+        <div class="filters-content">
+            <div class="row grid">
+                <div class="col-sm-6 col-lg-4 all burger">
+                    <div class="box">
+                        <div >
+                            <div class="img-box">
+                                <img src="/User/images/f2.png" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5 class="khung_tieude">
+                                    PIZZA Gấp Đôi Nhân Phủ Hải Sản Pesto
+                                </h5>
+                                <p class="khung_mota">
+                                    Pizza Hải Sản Xốt Pesto Với Hải Sản (Tôm, Mực) Nhân Đôi Cùng Với Nấm Trên Nền Xốt Pesto Đặc Trưng,
+                                    Phủ Phô Mai Mozzarella Từ New Zealand Và Quế Tây.
+                                </p>
+                                <div class="options">
+                                    <h6>
+                                        235,000 VNĐ
+                                    </h6>
+                                    <a th:href="@{/page/menu}">Đặt mua <i class="bi bi-cart4" style="color: white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4  all pasta">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="/User/images/pasta7.png" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    Mỳ Ý Bò Bằm Đút Lò
+                                </h5>
+                                <p>
+                                    Mỳ Ý, Xốt Bò Bằm, Phô Mai Mozzarella
+                                </p>
+                                <div class="options">
+                                    <h6>
+                                        110,000 VNĐ
+                                    </h6>
+                                    <a th:href="@{/page/menu}">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4  all pasta">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="/User/images/past6.png" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    Mỳ Ý Rau Củ Đút Lò
+                                </h5>
+                                <p>
+                                    Mỳ ý, Xốt Cà Chua Cay, Nấm, Ớt Chuông Xanh, Cà Chua, Dứa, Olive Đen, Phô Mai Mozzarella.
+                                </p>
+                                <div class="options">
+                                    <h6>
+                                        79,000 VNĐ
+                                    </h6>
+                                    <a th:href="@{/page/menu}">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4  all pasta">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="/User/images/pasta5.png" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    Mỳ Ý Hải Sản Đút Lò
+                                </h5>
+                                <p>
+                                    Mỳ Ý, Xốt Cà Chua Cay, Tôm, Thanh Cua, Mực, Phô Mai Mozzarella
+                                </p>
+                                <div class="options">
+                                    <h6>
+                                        120,000 VNĐ
+                                    </h6>
+                                    <a th:href="@{/page/menu}">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 all burger">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="/User/images/k2.png" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5 class="khung_tieude">
+                                    BÁNH Nachos
+                                </h5>
+                                <p class="khung_mota">
+                                    Bánh Nachos Giòn Rụm Kiểu Mexico Kèm Xốt Phô Mai Thơm Ngậy Hoặc Xốt Cà Chua Đặc Biệt.
+                                </p>
+                                <div class="options">
+                                    <h6>
+                                        29,000 VNĐ
+                                    </h6>
+                                    <a th:href="@{/page/menu}">Đặt mua <i class="bi bi-cart4" style="color: white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 all pasta">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="/User/images/k3.png" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5 class="khung_tieude">
+                                    SÚP KEM NẤM THỊT GÀ
+                                </h5>
+                                <p class="khung_mota">
+                                    Một món súp có màu trắng, với kết cấu sánh mịn, giàu dinh dưỡng từ thịt gà và rau củ,
+                                    đồng thời mang hương vị thơm ngon từ kem và gia vị.
+                                    Đây là một lựa chọn tuyệt vời cho bữa ăn ấm áp và bổ dưỡng.
+                                </p>
+                                <div class="options">
+                                    <h6>
+                                        49,000 VNĐ
+                                    </h6>
+                                    <a th:href="@{/page/menu}">Đặt mua <i class="bi bi-cart4" style="color: white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-box">
+            <a th:href="@{/page/menu}">
+                Xem thêm
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- end food section -->
+
+<!-- about section -->
+
+<section class="about_section layout_padding">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="img-box">
+                    <img src="/User/images/gioithieu.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="detail-box">
+                    <div class="heading_container">
+                        <h2>
+                            Chúng tôi là Pizza Hoàng Gia
+                        </h2>
+                    </div>
+                    <p>
+                        Tại quán pizza của chúng tôi, chúng tôi luôn khao khát mang đến những món pizza với hương vị
+                        khó quên cho thực khách. Bởi chúng tôi tin rằng, một món pizza hoàn hảo không chỉ là sự kết hợp
+                        của những nguyên liệu tươi ngon,mà còn phải gói gọn cả tâm huyết và sự sáng tạo của những người thợ lành nghề.
+                    </p>
+                    <p>
+                        Từ việc lựa chọn những viên phô mai thơm ngon, những lát xúc xích Ý đậm đà,
+                        đến cách nhào nặn, phủ sốt và nướng vỏ bánh đến vàng ruộm - mỗi công đoạn đều
+                        được thực hiện tỉ mỉ và cẩn thận, nhằm mang đến cho thực khách những miếng pizza
+                        với lớp vỏ giòn tan, nhưng lại ẩm và mềm bên trong. Đặc biệt, chúng tôi không ngừng
+                        sáng tạo các công thức mới, kết hợp những nguyên liệu đặc trưng của từng vùng miền để
+                        tạo nên những hương vị độc đáo, làm say lòng cả những thực khách khó tính nhất.
+                    </p>
+
+                    <p>
+                        Bằng sự tận tâm và tình yêu dành cho nghề, chúng tôi tin rằng, mỗi lần thưởng
+                        thức pizza tại quán, thực khách sẽ được trải nghiệm một hương vị tuyệt vời, khiến họ
+                        khó lòng quên được và luôn muốn trở lại. Hãy đến với chúng tôi và thưởng thức những
+                        món pizza độc đáo của quán!
+                    </p>
+                    <a th:href="@{/page/about}">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end about section -->
+
+<!-- client feel-->
+
+<section class="client_section layout_padding-bottom">
+    <div class="container-fluid">
+        <div class="heading_feel">
+            <h2>
+                Cảm nhận khách hàng
+            </h2>
+        </div>
+        <div class="card_container">
+            <div class="card">
+                <p>
+                    Ngay khi nhìn thấy pizza, vẻ ngoài bắt mắt với lớp phô mai vàng rộm bao phủ, điểm xuyết những miếng hải sản tươi ngon khiến ta không thể rời mắt.
+                    Mùi thơm của phô mai, dầu ô-liu và các gia vị hấp dẫn lập tức kích thích vị giác, khiến ta "ứa nước miếng" và không thể chờ đợi được nữa.
+                    Khi cắn một miếng, lớp vỏ bánh giòn rụm, tan nhanh trong miệng, tạo cảm giác sực nức. Phô mai chảy ra ấm áp, kết hợp với vị ngọt thơm của hải sản,
+                    như tan chảy trong vòm họng, mang lại cảm giác ngậy ngậy, béo béo vô cùng ngon miệng.
+                </p>
+                <hr>
+                <div><img src="/User/images/client1.jpg" alt="" class="person"><b> LÊ NGUYỄN VY </b></div>
+            </div>
+            <div class="card">
+                <p>
+                    Điểm nổi bật nhất chính là thiết kế nội thất được chăm chút tỉ mỉ.
+                    Không gian được sử dụng những vật liệu ấm áp như gỗ, da và đá tự nhiên,
+                    tạo nên một cảm giác sang trọng nhưng vẫn mang đến sự thoải mái.
+                    Ánh sáng mờ ảo từ những chiếc đèn chùm và đèn treo tường càng tôn lên vẻ
+                    đẹp của những chi tiết trang trí tinh tế.
+                    Bạn sẽ được chào đón bởi những nhân viên thân thiện và chu đáo, luôn sẵn sàng giúp đỡ
+                    bất kỳ lúc nào. Họ hòa nhập vào không gian một cách tự nhiên, làm cho bạn cảm thấy
+                    như đang được chăm sóc trong ngôi nhà của chính mình.
+                </p>
+                <hr>
+                <div><img src="/User/images/client2.jpg" alt="" class="person"><b>NGUYỄN VĂN NHẬT TÙNG </b></div>
+            </div>
+            <div class="card">
+                <p>
+                    Ngay từ khi bước chân vào Napoli Pizza, tôi đã cảm nhận được sự ân cần, chu đáo của đội ngũ
+                    nhân viên phục vụ. Họ chào đón tôi với nụ cười thân thiện và hướng dẫn tận tình về thực đơn,
+                    các món ăn đặc sắc. Tôi cảm thấy họ thực sự quan tâm đến nhu cầu và sở thích của khách hàng.
+                    Khi những chiếc pizza nóng hổi được mang ra, nhân viên phục vụ đặt chúng lên bàn một cách cẩn thận,
+                    tránh làm tràn đổ hay đụng chạm. Họ luôn quan sát để kịp thời đáp ứng các yêu cầu bổ sung của tôi,
+                    như muối, ớt hoặc dầu ô-liu. Tôi cảm thấy được chăm sóc rất chu đáo, giống như một thực khách đặc biệt.
+                </p>
+
+                <hr>
+                <div><img src="/User/images/client2.jpg" alt="" class="person"><b>TRẦN LÊ TRỌNG VĨNH </b></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end client feel -->
+
+<!--Open time-->
+<div class="container">
+    <div class="contain_open_time">
+        <div class="open_time_i">
+            <img src="/User/images/opentime.png" alt="">
+
+        </div>
+        <div class="open_time">
+            <h4>Giờ mở cửa</h4>
+            <br>
+            <p>Thứ 2 - Thứ 6 : 9h00-22h00</p>
+            <p>Thứ 7 - CN - Các ngày lễ : 9h00-23h00</p>
+            <div class="order">
+                <a th:href="@{/page/menu}">Đặt hàng trực tuyến</a>
+                <a th:href="@{/booking/table}">Đặt bàn</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--End open time-->
+
+<!-- footer section -->
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+                <div class="footer_contact">
+                    <h4>
+                        Liên hệ
+                    </h4>
+                    <div class="contact_link_box">
+                        <a href="">
+                            <i class="bi bi-geo-alt-fill"></i>Lê Đức Thọ, Quận Gò Vấp, TP Hồ Chí Minh
+                        </a>
+                        <a href="">
+                            <i class="bi bi-telephone-fill"></i> 1900 1800
+                        </a>
+                        <a href="">
+                            <i class="bi bi-envelope-at-fill"></i> Dangduchuy@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="" class="footer-logo">
+                        Kết nối
+                    </a>
+                    <p>
+                        Xem thêm chi tiết mô tả về cửa hàng cùng với các liên quan khác qua mạng Internet.
+                    </p>
+                    <div class="footer_social">
+                        <a href="">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+                        <a href="">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <h4>
+                    Hãy Đến Thưởng Thức
+                </h4>
+                <p>
+                    Liên hệ ngay với chung tôi
+                </p>
+                <p>
+                    1900 1080
+                </p>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!--end footer section -->
+
+<!-- jQery -->
+<script th:src="@{/User/js/jquery-3.4.1.min.js}"></script>
+<!-- bootstrap js -->
+<script th:src="@{/User/js/bootstrap.js}"></script>
+<!-- isotope js -->
+<script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+<!-- nice select -->
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js}"></script>
+
+</body>
+
+</html>

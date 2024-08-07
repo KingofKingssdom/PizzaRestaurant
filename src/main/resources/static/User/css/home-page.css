@@ -1,0 +1,13 @@
+.hero_area{
+    border: 1px solid red;
+}
+img{
+    border: 1px solid palevioletred;
+    width: 200px;
+    height: 200px;
+}
+.logo{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}

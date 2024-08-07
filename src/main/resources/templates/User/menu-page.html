@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="/User/images/favicon.png" type="">
+    <script th:src="@{http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js}"></script>
+    <title> Thực đơn </title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" th:href="@{/User/css/bootstrap.css}"/>
+
+    <!-- font awesome style -->
+    <link th:href="@{/User/css/font-awesome.min.css}" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/User/css/menu.css}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link th:href="@{/User/css/responsive.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+<header style="position: relative;">
+    <!--Start navbar-->
+    <div class="b-nav">
+        <div class="nav-i">
+            <img class="logo" src="/User/images/logo.png" >
+        </div>
+        <div class="nav-i-menu">
+            <a th:href="@{/page/home}">Trang chủ</a>
+            <a th:href="@{/page/menu}" class="load">Thực đơn</a>
+            <a th:href="@{/page/about}"><i class="bi bi-people-fill"></i> Giới thiệu </a>
+            <a th:href="@{/booking/table}"><i class="bi bi-telephone-forward"></i> Đặt bàn</a>
+            <a th:href="@{/shopping-cart/cart}"> <i class="bi bi-cart-check-fill" id="symbol-cart"></i></a>
+            <a href=""> <i class="bi bi-person-circle"></i> Đặng nhập</a>
+        </div>
+    </div>
+    <div class="bg-menu">
+        <img src="/User/images/background-men.jpg" alt="">
+    </div>
+    <!--end navbar-->
+</header>
+<!--Menu-->
+<div style="position: relative;">
+
+    <h1>THỰC ĐƠN</h1>
+    <ul>
+        <li><button id="btn-all" class="click-show">Tất cả</button></li>
+        <li><button id="btn-pizza">Pizza</button></li>
+        <li><button id="btn-pasta">Pasta</button></li>
+        <li><button id="btn-starter">Khai vị</button></li>
+        <li><button id="btn-drink">Thức uống</button></li>
+    </ul>
+
+    <div class="all-container">
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaSieuToppingBoNuongVaTom.png" alt="">
+            </div>
+            <h4 id="heading">Pizza Siêu Topping Bò Và Tôm Nướng Kiểu Mỹ</h4>
+            <p id="title">Tăng 50% lượng topping protein: Tôm, Thịt Bò Mexico; Thêm Phô Mai Mozzarella, Cà Chua, Hành, Xốt Cà Chua, Xốt Mayonnaise Xốt Phô Mai</p>
+            <div class="price">
+                <p class="prices">235,000 VNĐ</p>
+                <button class="btn-order" id="order-all1">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaSieuToppingDua.png" alt="">
+            </div>
+            <h4 id="heading2">Pizza Dăm Bông Dứa Kiểu Hawai</h4>
+            <p id="title2">Xốt Cà Chua, Phô Mai Mozzarella, Thịt Dăm Bông, Thơm</p>
+            <div class="price">
+                <p class="prices"> 175,000 VNĐ</p>
+                <button class="btn-order" id="order-all2">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaGaPhoMaiThitHeoXongKhoi.png" alt="">
+            </div>
+            <h4>Pizza Gà Phô Mai Thịt Heo Xông Khói</h4>
+            <p>Xốt Phô Mai, Gà Viên, Thịt Heo Muối, Phô Mai Mozzarella, Cà Chua</p>
+            <div class="price">
+                <p class="prices"> 175,000 VNĐ</p>
+                <button id="order-all3" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MiYBoBamDutLo.png" alt="">
+            </div>
+            <h4>Mỳ Ý Bò Bằm Đút Lò</h4>
+                <p>Mỳ Ý, Xốt Bò Bằm, Phô Mai Mozzarella</p>
+                <div class="price">
+                    <p class="prices">100,000 VNĐ</p>
+                    <button id="order-all4" class="btn-order">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+                </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MiYDamBongXotNam&Kem.png" alt="">
+            </div>
+            <h4> Mỳ Ý Dăm Bông & Nấm Xốt Kem</h4>
+            <p>Mỳ ý, Thịt Dăm Bông, Nấm, Phô Mai Mozarella, Xốt Kem Carbonara</p>
+            <div class="price">
+                <p class="prices">90,000 VNĐ</p>
+                <button id="order-all5" class="btn-order">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MiYHaiSanDutLo.png" alt="">
+            </div>
+            <h4>Mỳ Ý Hải Sản Đút Lò</h4>
+            <p>Mỳ Ý, Xốt Cà Chua Cay, Tôm, Thanh Cua, Mực, Phô Mai Mozzarella</p>
+            <div class="price">
+                <p class="prices">90,000 VNĐ</p>
+                <button id="order-all6" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+    </div>
+    <!--Pizza-->
+    <div class="pizza-container">
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaSieuToppingBoNuongVaTom.png" alt="">
+            </div>
+            <h4>Pizza Siêu Topping Bò Và Tôm Nướng Kiểu Mỹ</h4>
+            <p>Tăng 50% lượng topping protein: Tôm, Thịt Bò Mexico; Thêm Phô Mai Mozzarella, Cà Chua, Hành, Xốt Cà Chua, Xốt Mayonnaise Xốt Phô Mai</p>
+            <div class="price">
+                <p class="prices">235,000 VNĐ</p>
+                <button id="order-pizza1" class="btn-order">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaSieuToppingDua.png" alt="">
+            </div>
+            <h4>Pizza Dăm Bông Dứa Kiểu Hawai</h4>
+            <p>Xốt Cà Chua, Phô Mai Mozzarella, Thịt Dăm Bông, Thơm</p>
+            <div class="price">
+                <p class="prices"> 175,000 VNĐ</p>
+                <button id="order-pizza2" class="btn-order">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaGaPhoMaiThitHeoXongKhoi.png" alt="">
+            </div>
+            <h4>Pizza Gà Phô Mai Thịt Heo Xông Khói</h4>
+            <p>Xốt Phô Mai, Gà Viên, Thịt Heo Muối, Phô Mai Mozzarella, Cà Chua</p>
+            <div class="price">
+                <p class="prices"> 175,000 VNĐ</p>
+                <button id="order-pizza3" class="btn-order">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image" >
+                <img src="/User/images/MenuPizzaGaXotKieuNhat.png" alt="">
+            </div>
+            <h4>Pizza Gà Xốt Tương Kiểu Nhật</h4>
+            <p>Xốt Teriyaki, Phô Mai Mozzarella, Mayonnaise, Gà Viên, Nấm Mỡ, Hành Tây</p>
+            <div class="price">
+                <p class="prices">175,000 VNĐ</p>
+                <button id="order-pizza4" class="btn-order">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaHaiSanNhietDoiXotTieuDen.png" alt="">
+            </div>
+            <h4>Pizza Hải Sản Nhiệt Đới Xốt Tiêu</h4>
+            <p>Xốt tiêu đen, Phô Mai Mozzarella, Phô Mai Cheddar, Thơm, Hành Tây, Tôm, Mực</p>
+            <div class="price">
+                <p class="prices">200,000 VNĐ</p>
+                <button id="order-pizza5" class="btn-order">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaHaiSanXotCaChua.png" alt="">
+            </div>
+            <h4>Pizza Hải Sản Xốt Cà Chua</h4>
+            <p>Xốt Cà Chua, Phô Mai Mozzarella, Tôm, Mực, Thanh Cua, Hành Tây</p>
+            <div class="price">
+                <p class="prices">200,000 VNĐ</p>
+                <button id="order-pizza6" class="btn-order">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaHaiSanXotMayonnaise.png" alt="">
+            </div>
+            <h4>Pizza Hải Sản Xốt Mayonnaise</h4>
+            <p>Xốt Mayonnaise , Phô Mai Mozzarella, Tôm, Mực, Thanh Cua, Hành Tây</p>
+            <div class="price">
+                <p class="prices">210,000 VNĐ</p>
+                <button id="order-pizza7" class="btn-order">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaXotMaiyonnaiseDacBiet.png" alt="">
+            </div>
+            <h4>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</h4>
+            <p>Mưc Khoanh, Tôm Có Đuôi, Phô Mai Mozzarella, Cà Chua, Hành Tây, Xốt Mayonnaise, Parsley</p>
+            <div class="price">
+                <p class="prices">215,000 VNĐ</p>
+                <button id="order-pizza8" class="btn-order">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaNewYorkBoBeefsteakPhoMai.png" alt="">
+            </div>
+            <h4>Pizza New York Bò Beefsteak Phô Mai</h4>
+            <p>Bò Beefsteak, Xốt Demi-Glace (Xốt Bít Tết), Xốt Kem Chua, Phô Mai Mozzarella, Nấm, Cà Chua, Hành Tây, Bột Rong Biển</p>
+            <div class="price">
+                <p class="prices">215,000 VNĐ</p>
+                <button id="order-pizza9" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaNgapViPhoMaiHaoHang.png" alt="">
+            </div>
+            <h4>Pizza Ngập Vị Phô Mai Hảo Hạng</h4>
+            <p>Phô Mai Cheddar, Phô Mai Mozzarella, Phô Mai Xanh Viên, Viền Phô Mai, Xốt Phô Mai Và Phục Vụ Cùng Mật Ong</p>
+            <div class="price">
+                <p class="prices">175,000 VNĐ</p>
+                <button id="order-pizza10" class="btn-order">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaPho%20MaiTruyenThong.png" alt="">
+            </div>
+            <h4>Pizza Phô Mai Truyền Thống</h4>
+            <p>Xốt Cà Chua, phô Mai Mozzarella</p>
+            <div class="price">
+                <p class="prices">155,000 VNĐ</p>
+                <button id="order-pizza11" class="btn-order">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaRauCuThapCam.png" alt="">
+            </div>
+            <h4>Pizza Rau Củ Thập Cẩm</h4>
+            <p>Xốt Cà Chua, Phô Mai Mozzarella, Hành Tây, Ớt Chuông Xanh, Ô-liu, Nấm Mỡ, Cà Chua, Thơm (dứa)</p>
+            <div class="price">
+                <p class="prices">155,000 VNĐ</p>
+                <button id="order-pizza12" class="btn-order">Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaDamBongDuaKieuHawai.png" alt="">
+            </div>
+            <h4>Pizza Siêu Topping Dăm Bông Dứa Kiểu Hawai</h4>
+            <p>Tăng 50% lượng topping protein: Thịt Dăm Bông; Thêm Phô Mai Mozzarella, Dứa, Xốt Mayonnaise, Xốt Cà Chua</p>
+            <div class="price">
+                <p class="prices">205,000 VNĐ</p>
+                <button id="order-pizza13" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaThapCamThuongHang.png" alt="">
+            </div>
+            <h4>Pizza Thập Cẩm Thượng Hạng</h4>
+            <p>Xốt Cà Chua, Phô Mai Mozzarella, Xúc Xích Pepperoni, Thịt Dăm Bông, Xúc Xich Ý, Thịt Bò Viên, Ớt Chuông Xanh, Nấm Mỡ, Hành Tây, Ô-liu</p>
+            <div class="price">
+                <p class="prices">210,000 VNĐ</p>
+                <button id="order-pizza14" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaXucXichYTruyenThong.png" alt="">
+            </div>
+            <h4>Pizza Xúc Xích Ý Truyền Thống</h4>
+            <p>Xốt Cà Chua, Phô Mai Mozzarella, Xúc Xích Pepperoni</p>
+            <div class="price">
+                <p class="prices">200,000 VNĐ</p>
+                <button id="order-pizza15" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizzaXucXichXotPhoMai.png" alt="">
+            </div>
+            <h4>Pizza Siêu Topping Xúc Xích Ý Truyền Thống</h4>
+            <p>Tăng 50% lượng topping protein: Xúc Xích Pepperoni; Thêm Phô Mai Mozzarella, Xốt Cà Chua</p>
+            <div class="price">
+                <p class="prices">200,000 VNĐ</p>
+                <button id="order-pizza16" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/MenuPizza5LoaiThitThuongHang.png" alt="">
+            </div>
+            <h4>Pizza 5 Loại Thịt Thượng Hạng</h4>
+            <p>Xốt Cà Chua, Phô Mai Mozzarella, Xúc Xích Pepperoni, Thịt Dăm Bông, Xúc Xich Ý, Thịt Bò Viên, Thịt Heo Muối</p>
+            <div class="price">
+                <p class="prices">210,000 VNĐ</p>
+                <button id="order-pizza17" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+    </div>
+    <!--Pasta-->
+    <div class="pasta-container">
+        <div class="box-item" >
+            <div class="item-image">
+                <img src="/User/images/MiYBoBamDutLo.png" alt="">
+            </div>
+            <h4>Mỳ Ý Bò Bằm Đút Lò</h4>
+            <p>Mỳ Ý, Xốt Bò Bằm, Phô Mai Mozzarella</p>
+            <div class="price">
+                <p class="prices">100,000 VNĐ</p>
+                <button id="order-pasta1" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item" >
+            <div class="item-image">
+                <img src="/User/images/MiYDamBongXotNam&Kem.png" alt="">
+            </div>
+            <h4>Mỳ Ý Dăm Bông & Nấm Xốt Kem</h4>
+            <p>Mỳ ý, Thịt Dăm Bông, Nấm, Phô Mai Mozarella, Xốt Kem Carbonara</p>
+            <div class="price">
+                <p class="prices">90,000 VNĐ</p>
+                <button id="order-pasta2" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item" >
+            <div class="item-image">
+                <img src="/User/images/MiYHaiSanDutLo.png" alt="">
+            </div>
+            <h4>Mỳ Ý Hải Sản Đút Lò</h4>
+            <p>Mỳ Ý, Xốt Cà Chua Cay, Tôm, Thanh Cua, Mực, Phô Mai Mozzarella</p>
+            <div class="price">
+                <p class="prices">90,000 VNĐ</p>
+                <button id="order-pasta3" class="btn-order" >Đặt mua<i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item" >
+            <div class="item-image">
+                <img src="/User/images/MiYRauCuDutLo.png" alt="">
+            </div>
+            <h4> Mỳ Ý Rau Củ Đút Lò</h4>
+            <p>Mỳ ý, Xốt Cà Chua Cay, Nấm, Ớt Chuông Xanh, Cà Chua, Dứa, Olive Đen, Phô Mai Mozzarella.</p>
+            <div class="price">
+                <p class="prices">80,000 VNĐ</p>
+                <button id="order-pasta4" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item" >
+            <div class="item-image">
+                <img src="/User/images/MiYBoBamXotCaChua.png" alt="">
+            </div>
+            <h4>Mỳ Ý Bò Bằm Xốt Cà Chua</h4>
+            <p>Mì Ý bò bằm xốt cà chua</p>
+            <div class="price">
+                <p class="prices">120,000 VNĐ</p>
+                <button id="order-pasta5" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item" >
+            <div class="item-image">
+                <img src="/User/images/MiYHaiSanXotCaChua.png" alt="">
+            </div>
+            <h4>Mỳ Ý Hải Sản Xốt Cà Chua</h4>
+            <p>Mì Ý xốt cà chua với tôm, mực, hành tây và ớt chuông</p>
+            <div class="price">
+                <p class="prices">120,000 VNĐ</p>
+                <button id="order-pasta6" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item" >
+            <div class="item-image">
+                <img src="/User/images/MiYHaiSanXotTieuDen.png" alt="">
+            </div>
+            <h4>Mỳ Ý Hải Sản Xốt Tiêu Đen</h4>
+            <p>Mì Ý với tôm, thanh cua, mực, nấm, ớt chuông, đậu và xốt tiêu đen</p>
+            <div class="price">
+                <p class="prices">130,000 VNĐ</p>
+                <button id="order-pasta7" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+    </div>
+    <!--Khai vị-->
+    <div class="starter-container">
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/k1.png" alt="">
+            </div>
+            <h4> Bánh mì Bơ Tỏi</h4>
+            <p>Bánh mì bơ tỏi nướng giòn ngon phủ sốt bơ tỏi thơm nồng</p>
+            <div class="price">
+                <p class="prices">25,000 VNĐ</p>
+                <button id="order-starter1" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/k2.png" alt="">
+            </div>
+            <h4>Bánh Nachos</h4>
+            <p>Bánh Nachos giòn rụm kiểu Mexico kèm xốt phô mai thơm ngậy hoặc xốt cà chua đặc biệt.</p>
+            <div class="price">
+                <p class="prices">30,000 VNĐ</p>
+                <button id="order-starter2" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/k3.png" alt="">
+            </div>
+            <h4>Súp Kem Nấm Thịt Gà</h4>
+            <p>Một món súp có màu trắng, với kết cấu sánh mịn, giàu dinh dưỡng từ thịt gà và rau củ, đồng thời mang hương vị thơm ngon từ kem và gia vị.</p>
+            <div class="price">
+                <p class="prices">45,000 VNĐ</p>
+                <button id="order-starter3" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/f5.png" alt="">
+            </div>
+            <h4>Khoai Tây Lắc Phô Mai</h4>
+            <p> Khoai tây chiên vàng giòn, lắc bột phô mai</p>
+            <div class="price">
+                <p class="prices">25,000 VNĐ</p>
+                <button id="order-starter4" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Xup_Hai_San_400x275_20220729_preview_rev_1.png" alt="">
+            </div>
+            <h4>Súp Hải Sản</h4>
+            <p>Súp kem béo thơm, hải sản tươi ngon tạo nên hương vị thanh đạm</p>
+            <div class="price">
+                <p class="prices">50,000 VNĐ</p>
+                <button id="order-starter5" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Banh_Cuon_Pho_Mai_800X550_preview_rev_1.png" alt="">
+            </div>
+            <h4>Bánh Cuộn Phô Mai</h4>
+            <p>Làm từ 2 loại phô mai Mozarella cuộn ngoài phô mai chiên giòn</p>
+            <div class="price">
+                <p class="prices">25,000 VNĐ</p>
+                <button id="order-starter6" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Bap_Nuong_Pho_Mai_Thit_Xong_Khoi_preview_rev_1.png" alt="">
+            </div>
+            <h4>Bắp Nướng Phô Mai Thịt Xông Khói</h4>
+            <p>Bắp Ngọt, Thịt Xông Khói Kèm Xốt Cheesy Mayo Và Bơ Tỏi, Phủ Phô Mai Mozzarella Đút Lò</p>
+            <div class="price">
+                <p class="prices">70,000 VNĐ</p>
+                <button id="order-starter7" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Com_Chien_Tom_Vi_Cay_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Cơm Chiên Tôm Vị Cay</h4>
+            <p>Cơm Chiên Tôm Vị Cay Nổi Tiếng Trên Nền Xốt Bơ Tỏi Độc Đáo Từ Pizza</p>
+            <div class="price">
+                <p class="prices">55,000 VNĐ</p>
+                <button id="order-starter8" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Khoai_Tay_Chien_Dut_Lo_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Khoai Tây Chiên Đút Lò</h4>
+            <p>Khoai tây chiên đút lò với phô mai, thịt xông khói và xốt mù tạt mật ong.</p>
+            <div class="price">
+                <p class="prices">25,000 VNĐ</p>
+                <button id="order-starter9" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Pho_Mai_Chien_Gion_800X550_preview_rev_1.png" alt="">
+            </div>
+            <h4> Phô Mai Chiên Giòn</h4>
+            <p>Phô mai chiên vàng giòn rụm</p>
+            <div class="price">
+                <p class="prices">25,000 VNĐ</p>
+                <button id="order-starter10" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Xa_Lach_Ca_Ngu_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Salad Trộn Cá Ngừ Và Thịt Xông Khói</h4>
+            <p>Rau xanh trộn với cá Ngừ, thịt xông khói, đậu Pháp, cà chua bi, bắp và xốt Mayonnaise</p>
+            <div class="price">
+                <p class="prices">65,000 VNĐ</p>
+                <button id="order-starter11" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Xa_Lach_Ga_Pesto_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Salad Gà Pesto</h4>
+            <p>Salad tươi xanh với thịt gà nướng và xốt Pesto Italia</p>
+            <div class="price">
+                <p class="prices">60,000 VNĐ</p>
+                <button id="order-starter12" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Xa_Lach_Da_Ca_Hoi_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Salad Da Cá Hồi</h4>
+            <p> Salad trộn với da cá hồi, cà chua bi, ớt chuông cùng xốt mè rang đặc biệt</p>
+            <div class="price">
+                <p class="prices">55,000 VNĐ</p>
+                <button id="order-starter13" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Com_Chien_Hai_San_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Cơm Chiên Hải Sản</h4>
+            <p>Cơm chiên hải sản (Tôm, Mực) cùng với rau củ</p>
+            <div class="price">
+                <p class="prices">75,000 VNĐ</p>
+                <button id="order-starter14" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Xuc_Xich_Y_Nuong_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Xúc Xích Itali Nướng</h4>
+            <p>Luôn là món khoái khẩu của bất kì tín đồ Pizza</p>
+            <div class="price">
+                <p class="prices">100,000 VNĐ</p>
+                <button id="order-starter15" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Com_Xuc_Xich_Nuong_Pho_Mai_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Cơm Xúc Xích Nướng Phô Mai</h4>
+            <p>Khi cơm và xúc xích được hoà làm một, ăn kèm cà rốt, đậu và bắp tươi rói trên nền xốt tiêu đen</p>
+            <div class="price">
+                <p class="prices">75,000 VNĐ</p>
+                <button id="order-starter16" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Muc_Chien_Gion_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Mực Chiên Giòn</h4>
+            <p>Mực khoanh tẩm bột chiên giòn</p>
+            <div class="price">
+                <p class="prices">75,000 VNĐ</p>
+                <button id="order-starter17" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Com_Hai_San_Dut_Lo_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Cơm Hải Sản Đút Lò</h4>
+            <p>Thêm ngon với tôm, thêm no với cơm, và thêm tươi với cà rốt, bắp và đậu trên nền xốt pesto quen thuộc</p>
+            <div class="price">
+                <p class="prices">90,000 VNĐ</p>
+                <button id="order-starter18" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Xa_Lach_Tom_Nuong_Dao_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Salad Tôm Nướng Đào</h4>
+            <p>Thưởng thức lát đào tươi mọng, hoà quyện vị tôm chân thật cùng xà lách, cà chua và quả oliu</p>
+            <div class="price">
+                <p class="prices">80,000 VNĐ</p>
+                <button id="order-starter19" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item">
+            <div class="item-image">
+                <img src="/User/images/Com_Chien_Toi_Voi_Canh_Ga_Xot_BBQ_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Cơm Cánh Gà BBQ</h4>
+            <p>Cơm chiên tỏi với cánh gà BBQ nóng hổi thơm ngon</p>
+            <div class="price">
+                <p class="prices">110,000 VNĐ</p>
+                <button id="order-starter20" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+    </div>
+    <!--Đồ uống-->
+    <div class="drink-container">
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/Aquafina_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Aquafina</h4>
+            <p>Aquafina 500ml</p>
+            <div class="price">
+                <p class="prices">30,000 VNĐ</p>
+                <button id="order-drink1" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/7Up_Can_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>7 Up</h4>
+            <p> 7 Up Can 320ml</p>
+            <div class="price">
+                <p class="prices">30,000 VNĐ</p>
+                <button id="order-drink2" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/Mirinda_Orange_Can_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Mirinda cam</h4>
+            <p>Mirinda cam 320ml</p>
+            <div class="price">
+                <p class="prices">30,000 VNĐ</p>
+                <button id="order-drink3" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/Pepsi_Lemon_Can_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Pepsi Lemon</h4>
+            <p> Pepsi Lemon 320ml</p>
+            <div class="price">
+                <p class="prices">30,000 VNĐ</p>
+                <button id="order-drink4" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/Pepsi_Can_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Pepsi</h4>
+            <p>Pepsi 320ml</p>
+            <div class="price">
+                <p class="prices">30,000 VNĐ</p>
+                <button id="order-drink5" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/Pepsi_NoCalo_Can_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Pepsi Không Calo</h4>
+            <p>Pepsi Không Calo 320ml</p>
+            <div class="price">
+                <p class="prices">30,000 VNĐ</p>
+                <button id="order-drink6" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/Tra_Dao_Hat_Chia_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Trà Đào Hạt Chia</h4>
+            <p>Trà đào, đào miếng, hạt chia</p>
+            <div class="price">
+                <p class="prices">35,000 VNĐ</p>
+                <button id="order-drink7" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/Tra_Sua_Tra_Den_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Trà Sữa kem Cheese</h4>
+            <p>Trà Olong, kem cheese, hạt chia</p>
+            <div class="price">
+                <p class="prices">35,000 VNĐ</p>
+                <button id="order-drink8" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/Tra_Vai_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Trà Vải</h4>
+            <p>Trà Olong, trái vải</p>
+            <div class="price">
+                <p class="prices">35,000 VNĐ</p>
+                <button id="order-drink9" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/7Up_1.5L_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>7 Up</h4>
+            <p>7 Up 1.5l</p>
+            <div class="price">
+                <p class="prices">40,000 VNĐ</p>
+                <button id="order-drink10" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/Mirinda_1.5L_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4> Mirinda cam </h4>
+            <p> Mirinda cam 1.5l</p>
+            <div class="price">
+                <p class="prices">40,000 VNĐ</p>
+                <button id="order-drink11" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/Pepsi_1.5L_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Pepsi</h4>
+            <p>Pepsi 1.5l</p>
+            <div class="price">
+                <p class="prices">40,000 VNĐ</p>
+                <button id="order-drink12" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/Macchiato_Dao_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Machiato Đào</h4>
+            <p>Đậm vị trà đào cùng lớp kem sữa milk foam mềm mịn</p>
+            <div class="price">
+                <p class="prices">35,000 VNĐ</p>
+                <button id="order-drink13" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/Mojito_Dao_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Mojito Đào</h4>
+            <p>Mát lạnh mùa hè cùng hương vị soda đậm vị đào</p>
+            <div class="price">
+                <p class="prices">35,000 VNĐ</p>
+                <button id="order-drink14" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+        <div class="box-item ">
+            <div class="item-image">
+                <img src="/User/images/Mojito_Vai_400x275_preview_rev_1.png" alt="">
+            </div>
+            <h4>Mojito Vải</h4>
+            <p>Mát lạnh mùa hè cùng hương vị soda đậm vị vải</p>
+            <div class="price">
+                <p class="prices">35,000 VNĐ</p>
+                <button id="order-drink15" class="btn-order" >Đặt mua <i class="bi bi-cart4" style="color: white"></i> </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--End menu-->
+<!--Modal-->
+<div class="modal-contain">
+    <div class="modals">
+        <div class="anh">
+            <img id="dynamic-image" src="">
+        </div>
+        <div class="content">
+            <div class="content-header" id="content">
+                <h4 id="headingModal"></h4>
+                <p id="titleModal"></p>
+            </div>
+            <h5>Chọn đế bánh</h5>
+            <div class="content-select">
+                <div class="select-order">
+                    <label for="demong">
+                        <input type="radio" name="cakeBase" id="demong" value="Đế dày bột tươi"> Đế Dày Bột Tươi
+                    </label>
+                </div>
+                <div class="i-select"> <img src="/User/images/pizza-base-1.png" alt="" ></div>
+            </div>
+            <div class="content-select">
+                <div class="select-order">
+                    <label for="devua">
+                        <input type="radio" name="cakeBase" id="devua" value="Đế vừa bột tươi"> Đế Vừa Bột Tươi
+                    </label>
+                </div>
+                <div class="i-select"> <img src="/User/images/pizza-base-1.png" alt="" ></div>
+            </div>
+            <div class="content-select">
+                <div class="select-order">
+                    <label for="deday">
+                        <input type="radio" name="cakeBase" id="deday" value="Đế mỏng giòn"> Đế Mỏng Giòn
+                    </label>
+                </div>
+                <div class="i-select"> <img src="/User/images/pizza-base-1.png" alt="" ></div>
+            </div>
+            <h5>Chọn cỡ bánh</h5>
+            <div class="content-select">
+                <div class="select-order">
+                    <label for="conho">
+                        <input type="radio" name="cakeSize" id="conho" value="Cỡ nhỏ"> Cỡ nhỏ
+                    </label>
+                </div>
+                <div class="i-select"> <img src="/User/images/pizza-size-2.png" alt="" ></div>
+            </div>
+            <div class="content-select">
+                <div class="select-order">
+                    <label for="covua">
+                        <input type="radio" name="cakeSize" id="covua" value="Cỡ vừa"> Cỡ vừa
+                    </label>
+                </div>
+                <div class="i-select"> <img src="/User/images/pizza-size-2.png" alt="" ></div>
+            </div>
+            <div class="content-select">
+                <div class="select-order">
+                    <label for="colon">
+                        <input type="radio" name="cakeSize" id="colon" value="Cỡ lớn"> Cỡ lớn
+                    </label>
+                </div>
+                <div class="i-select"> <img src="/User/images/pizza-size-2.png" alt="" ></div>
+            </div>
+            <div class="content-footer">
+                <div class="container-quantity">
+                    <div class="decrease-quantity">-</div>
+                    <div class="amount">1</div>
+                    <div class="increase-quantity">+</div>
+                    <p id="priceModal"></p>
+                    <button class="add_cart">Thêm vào giỏ hàng</button>
+                    <button class="buy">Mua ngay</button>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        <button id="btn-close" type="button">X</button>
+    </div>
+</div>
+<!--End modal-->
+<!--Modal 2-->
+    <div class="contain-modal2">
+        <div class="modal-order">
+            <div class="content-image">
+                <img id="dynamic-image2" src="">
+            </div>
+            <div class="content-order">
+               <h4 id="headingModal2"></h4>
+                <p id="titleModal2"></p>
+                <div class="content-footer">
+                    <div class="container-quantity">
+                        <div class="decrease-quantity">-</div>
+                        <div class="amount">1</div>
+                        <div class="increase-quantity">+</div>
+                        <p id="priceModal2"></p>
+                        <button class="add_cart2">Thêm vào giỏ hàng</button>
+                        <button class="buy2">Mua ngay</button>
+                    </div>
+                </div>
+            </div>
+            <button id="btn-close-modal2" type="button">X</button>
+        </div>
+
+    </div>
+<!--End modal 2-->
+<!--Modal 3-->
+<div class="contain-modal3">
+    <div class="modal-order">
+        <div class="content-image3">
+            <img id="dynamic-image3" src="">
+        </div>
+        <div class="content-order">
+            <h4 id="headingModal3"></h4>
+            <p id="titleModal3"></p>
+            <div class="content-footer">
+                <div class="container-quantity">
+                    <div class="decrease-quantity">-</div>
+                    <div class="amount">1</div>
+                    <div class="increase-quantity">+</div>
+                    <p id="priceModal3"></p>
+                    <button class="add_cart3">Thêm vào giỏ hàng</button>
+                    <button class="buy3">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <button id="btn-close-modal3" type="button">X</button>
+    </div>
+
+</div>
+<!--End modal 3-->
+<!--cart success-->
+<div class="container-cart">
+    <div class="content-cart">
+        <h4>Thêm vào giỏ hàng thành công</h4>
+        <button id="btn-close-cartSuccess">Đóng</button>
+    </div>
+</div>
+<!--End cart success-->
+<!--Purchase success-->
+<div class="container-purchase">
+    <div class="content-purchase">
+        <h4>Mua hàng thành công</h4>
+        <div id="purchase-paragraph">Cám ơn quý khách đã sử dụng dịch vụ</div>
+        <button id="btn-close-purchaseSuccess">Đóng</button>
+    </div>
+</div>
+<!--End purchase success-->
+<!-- footer section -->
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+                <div class="footer_contact">
+                    <h3>
+                        Liên hệ
+                    </h3>
+                    <div class="contact_link_box">
+                        <a href="">
+                            <i class="bi bi-geo-alt-fill"></i>Lê Đức Thọ, Quận Gò Vấp, TP Hồ Chí Minh
+                        </a>
+                        <a href="">
+                            <i class="bi bi-telephone-fill"></i> 1900 1800
+                        </a>
+                        <a href="">
+                            <i class="bi bi-envelope-at-fill"></i> DangducHuy@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <h3>
+                        Kết nối
+                    </h3>
+                    <p>
+                        Xem thêm chi tiết mô tả về cửa hàng cùng với các liên quan khác qua mạng Internet.
+                    </p>
+                    <div class="footer_social">
+                        <a href="">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+                        <a href="">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <h3>
+                    Giờ mở cửa
+                </h3>
+                <p>Thứ 2 - Thứ 6 : 9h00-22h00 <br>
+                    Thứ 7 - CN - Các ngày lễ : 9h00-23h00
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- footer section -->
+<!-- Load menu -->
+<script th:src="@{/User/js/loadmore.js}"></script>
+<!-- jQery -->
+<script th:src="@{/User/js/jquery-3.4.1.min.js}"></script>
+<!-- popper js -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<!-- bootstrap js -->
+<script th:src="@{/User/js/bootstrap.js}"></script>
+
+<!--  orderSuccess-->
+<script th:src="@{/User/js/orderSuccess.js}"></script>
+<!--cart-->
+<script th:src="@{/User/js/cart.js}"></script>
+<!--purchase-->
+<script th:src="@{/User/js/purchase.js}"></script>
+</body>
+
+</html>

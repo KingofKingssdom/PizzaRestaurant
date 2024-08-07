@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="/User/images/favicon.png" type="">
+
+    <title> Đặt bàn</title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" th:href="@{/User/css/bootstrap.css}" />
+
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css}" />
+    <!-- nice select  -->
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css}" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+    <!-- font awesome style -->
+    <link th:href="@{/User/css/font-awesome.min.css}" rel="stylesheet" />
+    <!-- font awesome style -->
+    <!-- Custom styles for this template -->
+    <link th:href="@{/User/css/book.css}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link th:href="@{/User/css/responsive.css}" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+<!--Start navbar-->
+<div class="b-nav">
+    <div class="nav-i">
+        <img class="logo" src="/User/images/logo.png" >
+    </div>
+    <div class="nav-i-menu">
+        <a th:href="@{/page/home}">Trang chủ</a>
+        <a th:href="@{/page/menu}">Thực đơn</a>
+        <a th:href="@{/page/about}"><i class="bi bi-people-fill"></i> Giới thiệu </a>
+        <a th:href="@{/booking/table}"><i class="bi bi-table"></i> Đặt bàn</a>
+        <a href=""> <i class="bi bi-person-circle"></i> Đặng nhập</a>
+    </div>
+</div>
+<!--end navbar-->
+<!-- Content success -->
+    <div class="contain">
+        <h1>ĐẶT BÀN THÀNH CÔNG</h1>
+        <p>Nhà hàng sẽ liên hệ với bạn để xác nhận trong 10 phút tới</p>
+        <p><b>Vui lòng giữ liên lạc</b></p>
+        <p>Cám ơn quý khách đã sử dụng dịch vụ nhà hàng</p>
+    </div>
+
+<!--End content success-->
+<!-- footer section -->
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+                <div class="footer_contact">
+                    <h4>
+                        Liên hệ
+                    </h4>
+                    <div class="contact_link_box">
+                        <a href="">
+                            <i class="bi bi-geo-alt-fill"></i> Lê Đức Thọ, Quận Gò Vấp, TP Hồ Chí Minh
+                        </a>
+                        <a href="">
+                            <i class="bi bi-telephone-fill"></i> 1900 1800
+                        </a>
+                        <a href="">
+                            <i class="bi bi-envelope-at-fill"></i> Dangduchuy@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="" class="footer-logo">
+                        Kết nối
+                    </a>
+                    <p>
+                        Xem thêm chi tiết mô tả về cửa hàng cùng với các liên quan khác qua mạng Internet.
+                    </p>
+                    <div class="footer_social">
+                        <a href="">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+                        <a href="">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <h4>
+                    Giờ mở cửa
+                </h4>
+                <p>Thứ 2 - Thứ 6 : 9h00-22h00</p>
+                <p>Thứ 7 - CN - Các ngày lễ : 9h00-23h00</p>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- footer section -->
+
+<!-- jQery -->
+<script th:src="@{/User/js/jquery-3.4.1.min.js}"></script>
+<!--Success-->
+<script th:src="@{/User/js/success.js}"></script>
+
+<!-- bootstrap js -->
+<script th:src="@{/User/js/bootstrap.js}"></script>
+
+
+</body>
+
+</html>

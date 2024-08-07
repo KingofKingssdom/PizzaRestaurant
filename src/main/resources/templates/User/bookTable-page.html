@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.png" type="">
+
+    <title>Đặt bàn</title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" th:href="@{/User/css/bootstrap.css}" />
+    <!-- font awesome style -->
+    <link th:href="@{/User/css/font-awesome.min.css}" rel="stylesheet" />
+    <!-- css page book -->
+    <link th:href="@{/User/css/book.css}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link th:href="@{/User/css/responsive.css}" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+<!--Start navbar-->
+<div class="b-nav">
+    <div class="nav-i">
+        <img class="logo" src="/User/images/logo.png" >
+    </div>
+    <div class="nav-i-menu">
+        <a th:href="@{/page/home}">Trang chủ</a>
+        <a th:href="@{/page/menu}">Thực đơn</a>
+        <a th:href="@{/page/about}"><i class="bi bi-people-fill"></i> Giới thiệu </a>
+        <a th:href="@{/booking/table}"><i class="bi bi-table"></i> Đặt bàn</a>
+        <a th:href="@{/shopping-cart/cart}"> <i class="bi bi-cart-check-fill" id="symbol-cart"></i></a>
+        <a href=""> <i class="bi bi-person-circle"></i> Đặng nhập</a>
+    </div>
+</div>
+<!--end navbar-->
+<!-- book section -->
+<section class="book_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <h2>
+                ĐẶT BÀN
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form_container">
+                    <form th:action="@{/booking/add}" th:object="${book}" method="post">
+                        <div>
+                            <i class="bi bi-people-fill"></i>
+                            <label for="name">Họ và tên</label>
+                            <input th:field="*{name}" type="text" id="name" class="form-control" placeholder="Họ tên" />
+                        </div>
+                        <div>
+                            <i class="bi bi-telephone-plus-fill"></i>
+                            <label for="phone">Số điện thoại</label>
+                            <input th:field="*{phone}" type="text" id="phone" class="form-control" placeholder="Số điện thoại" />
+                        </div>
+                        <div>
+                            <i class="bi bi-envelope-arrow-down-fill"></i>
+                            <label for="email">Email</label>
+                            <input th:field="*{email}" type="email" id="email" class="form-control" placeholder=" Email" />
+                        </div>
+                        <div>
+                            <i class="bi bi-gear-wide-connected"></i>
+                            <label for="number">Số lượng người</label>
+                            <select th:field="*{number}" id="number"  class="form-control nice-select wide">
+                                 <option th:value="1người">
+                                    1 người
+                                </option>
+                                <option th:value="2người">
+                                    2 người
+                                </option>
+                                <option th:value="3người">
+                                    3 người
+                                </option>
+                                <option th:value="4người">
+                                    4 người
+                                </option>
+                                <option th:value="5người">
+                                    5 người
+                                </option>
+                                <option th:value="6người">
+                                    6 người
+                                </option>
+                                <option th:value="7người">
+                                    7 người
+                                </option>
+                                <option th:value="8người">
+                                    8 người
+                                </option>
+                            </select>
+                        </div>
+                        <div>
+                            <i class="bi bi-calendar3"></i>
+                            <label for="day">Ngày dùng bữa</label>
+                            <input th:field="*{day}" type="date" id="day" class="form-control">
+                        </div>
+                         <div >
+                             <i class="bi bi-clock-fill"></i>
+                             <label for="time">Thời gian dùng bữa</label>
+                            <select th:field="*{time}" id="time" class="form-control nice-select wide">
+                                <option th:value="10h00">
+                                    10:00
+                                </option>
+                                <option th:value="10h30">
+                                    10:30
+                                </option>
+                                <option th:value="11h00">
+                                    11:00
+                                </option>
+                                <option th:value="11h30">
+                                    11:30
+                                </option>
+                                <option th:value="12h00">
+                                    12:00
+                                </option>
+                                <option th:value="12h30">
+                                    12:30
+                                </option>
+                                <option th:value="13h00">
+                                    13:00
+                                </option>
+                                <option th:value="13h30">
+                                   13:30
+                                </option>
+                                <option th:value="14h00">
+                                    14:00
+                                </option>
+                                <option th:value="14h30">
+                                    14:30
+                                </option>
+                                <option th:value="15h00">
+                                    15:00
+                                </option>
+                                <option th:value="15h30">
+                                    15:30
+                                </option>
+                                <option th:value="16h00">
+                                    16:00
+                                </option>
+                                <option th:value="16h30">
+                                    16:30
+                                </option>
+                                <option th:value="17h00">
+                                    17:00
+                                </option>
+                                <option th:value="17h30">
+                                    17:30
+                                </option>
+                                <option th:value="18h00">
+                                    18:00
+                                </option>
+                                <option th:value="18h30">
+                                    18:30
+                                </option>
+                                <option th:value="19h00">
+                                    19:00
+                                </option>
+                                <option th:value="19h30">
+                                    19:30
+                                </option>
+                                <option th:value="20h00">
+                                    20:00
+                                </option>
+                                <option th:value="20h30">
+                                    20:30
+                                </option>
+                                <option th:value="21h00">
+                                    21:00
+                                </option>
+                            </select>
+                        </div>
+                        <div class="btn_box">
+                            <button>Đặt ngay</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="map_container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31348.41139122065!2d106.6645009!3d10.8455998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1722060505650!5m2!1svi!2s" width="600" height="600" style="border:none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end book section -->
+
+<!-- footer section -->
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+                <div class="footer_contact">
+                    <h4>
+                        Liên hệ
+                    </h4>
+                    <div class="contact_link_box">
+                        <a href="">
+                            <i class="bi bi-geo-alt-fill"></i> Lê Đức Thọ, Quận Gò Vấp, TP Hồ Chí Minh
+                        </a>
+                        <a href="">
+                            <i class="bi bi-telephone-fill"></i> 1900 1800
+                        </a>
+                        <a href="">
+                            <i class="bi bi-envelope-at-fill"></i> Dangduchuy@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="" class="footer-logo">
+                        Kết nối
+                    </a>
+                    <p>
+                        Xem thêm chi tiết mô tả về cửa hàng cùng với các liên quan khác qua mạng Internet.
+                    </p>
+                    <div class="footer_social">
+                        <a href="">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+                        <a href="">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <h4>
+                    Giờ mở cửa
+                </h4>
+                <p>Thứ 2 - Thứ 6 : 9h00-22h00</p>
+                <p>Thứ 7 - CN - Các ngày lễ : 9h00-23h00</p>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- footer section -->
+
+<!-- jQery -->
+<script th:src="@{/User/js/jquery-3.4.1.min.js}"></script>
+<!--Success-->
+<script th:src="@{/User/js/success.js}"></script>
+<!-- bootstrap js -->
+<script th:src="@{/User/js/bootstrap.js}"></script>
+</body>
+
+</html>

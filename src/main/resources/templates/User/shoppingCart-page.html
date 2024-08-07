@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="/User/images/favicon.png" type="">
+
+    <title>Giỏ hàng</title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" th:href="@{/User/css/bootstrap.css}" />
+    <!-- font awesome style -->
+    <link th:href="@{/User/css/font-awesome.min.css}" rel="stylesheet" />
+    <!-- css page book -->
+    <link th:href="@{/User/css/shopping_cart.css}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link th:href="@{/User/css/responsive.css}" rel="stylesheet" />
+
+</head>
+<body class="sub_page">
+<!--Start navbar-->
+<div class="b-nav">
+    <div class="nav-i">
+        <img class="logo" src="/User/images/logo.png" >
+    </div>
+    <div class="nav-i-menu">
+        <a th:href="@{/page/home}">Trang chủ</a>
+        <a th:href="@{/page/menu}">Thực đơn</a>
+        <a th:href="@{/page/about}"><i class="bi bi-people-fill"></i> Giới thiệu </a>
+        <a th:href="@{/booking/table}"><i class="bi bi-table"></i> Đặt bàn</a>
+        <a th:href="@{/shopping-cart/cart}"> <i class="bi bi-cart-check-fill"></i></a>
+        <a href=""> <i class="bi bi-person-circle"></i> Đặng nhập</a>
+    </div>
+</div>
+<!--end navbar-->
+<!-- Body shopping_cart -->
+    <div class="container-fluid">
+        <h2>Giỏ hàng</h2>
+        <div class="content-shoppingCart">
+            <table>
+                <tr>
+                    <th> Tên món ăn </th>
+                    <th> Đế bánh </th>
+                    <th> Kích thước bánh </th>
+                    <th> Số lượng </th>
+                    <th> Đơn giá </th>
+                    <th> Tổng tiền</th>
+                    <th> Thao tác</th>
+                </tr>
+                <tbody>
+                <tr th:each="o: ${orders} ">
+                    <td th:text="${o.name}"></td>
+                    <td th:text="${o.cakeBase}"></td>
+                    <td th:text="${o.cakeSize}"></td>
+                    <td th:text="${o.number}"></td>
+                    <td class="price" th:text="${o.prices}"></td>
+                    <td class="price" th:text="${o.total}"></td>
+                    <td><a th:href="@{/shopping-cart/{id}(id=${o.id})}">Xóa</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+<!-- end body shopping_cart -->
+<!-- footer section -->
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+                <div class="footer_contact">
+                    <h4>
+                        Liên hệ
+                    </h4>
+                    <div class="contact_link_box">
+                        <a href="">
+                            <i class="bi bi-geo-alt-fill"></i>Lê Đức Thọ, Quận Gò Vấp, TP Hồ Chí Minh
+                        </a>
+                        <a href="">
+                            <i class="bi bi-telephone-fill"></i> 1900 1800
+                        </a>
+                        <a href="">
+                            <i class="bi bi-envelope-at-fill"></i> duchuyd101@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="" class="footer-logo">
+                        Kết nối
+                    </a>
+                    <p>
+                        Xem thêm chi tiết mô tả về cửa hàng cùng với các liên quan khác qua mạng Internet.
+                    </p>
+                    <div class="footer_social">
+                        <a href="">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+                        <a href="">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <h4>
+                    Giờ mở cửa
+                </h4>
+                <p>Thứ 2 - Thứ 6 : 9h00-22h00</p>
+                <p>Thứ 7 - CN - Các ngày lễ : 9h00-23h00</p>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- footer section -->
+
+<!-- jQery -->
+<script th:src="@{/User/js/jquery-3.4.1.min.js}"></script>
+<!--Success-->
+<script th:src="@{/User/js/success.js}"></script>
+<!-- bootstrap js -->
+<script th:src="@{/User/js/bootstrap.js}"></script>
+</body>
+
+</html>
